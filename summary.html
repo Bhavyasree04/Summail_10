@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Summary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h2 class="header">📝 Email Summary</h2>
+        <div class="card">
+            <h4>Subject: {{ email.subject }}</h4>
+            <h4>From: {{ email.sender }}</h4>
+            <p><strong>Summary:</strong></p>
+            <p id="summaryText">{{ summary }}</p>
+            <button class="button" onclick="readSummary()">🔊 Listen</button>
+            <button class="button" onclick="downloadSummary()">⬇️ Download</button>
+        </div>
+        <a href="{{ url_for('inbox') }}" class="button">📥 Back to Inbox</a>
+    </div>
+</body>
+</html>

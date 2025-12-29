@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Inbox - Summail</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2 class="header">📥 Your Inbox</h2>
+        <form method="GET" action="{{ url_for('inbox') }}">
+            <input type="text" name="q" placeholder="🔍 Search subject/sender" value="{{ request.args.get('q', '') }}">
+            <button class="button">Search</button>
+        </form>
+
+        <h3>🔥 High Priority</h3>
+        {% if high_priority %}
+            {% for email in high_priority %}
+                <div class="email-box">
+                    <h4>📌 Subject: {{ email.subject }}</h4>
+                    <p>👤 From: {{ email.sender }}</p>
+                    <a href="{{ url_for('email_detail', id=email.id) }}" class="button">View Full Email</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No high priority emails.</p>
+        {% endif %}
+
+        <h3>⚠️ Medium Priority</h3>
+        {% if medium_priority %}
+            {% for email in medium_priority %}
+                <div class="email-box">
+                    <h4>📌 Subject: {{ email.subject }}</h4>
+                    <p>👤 From: {{ email.sender }}</p>
+                    <a href="{{ url_for('email_detail', id=email.id) }}" class="button">View Full Email</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No medium priority emails.</p>
+        {% endif %}
+
+        <h3>ℹ️ Low Priority</h3>
+        {% if low_priority %}
+            {% for email in low_priority %}
+                <div class="email-box">
+                    <h4>📌 Subject: {{ email.subject }}</h4>
+                    <p>👤 From: {{ email.sender }}</p>
+                    <a href="{{ url_for('email_detail', id=email.id) }}" class="button">View Full Email</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No low priority emails.</p>
+        {% endif %}
+
+        <h3>🗑️ Spam</h3>
+        {% if spam %}
+            {% for email in spam %}
+                <div class="email-box">
+                    <h4>📌 Subject: {{ email.subject }}</h4>
+                    <p>👤 From: {{ email.sender }}</p>
+                    <a href="{{ url_for('email_detail', id=email.id) }}" class="button">View Full Email</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No spam emails.</p>
+        {% endif %}
+
+        <a href="{{ url_for('welcome') }}" class="button">🏠 Back to Home</a>
+    </div>
+</body>
+</html>

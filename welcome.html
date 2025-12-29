@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Summail</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <button onclick="toggleDarkMode()" class="btn btn-toggle">🌙 Toggle Mode</button>
+
+    <div class="container">
+        <div class="card">
+            <h2 class="header">📩 Welcome to Summail</h2>
+            <p style="text-align:center; font-size:18px;">AI-Powered Email Summarizer </p>
+            <div style="text-align:center;">
+                <a href="{{ url_for('inbox') }}" class="button">📬 View Inbox</a>
+                <button class="button" onclick="toggleDarkMode()">🌓 Toggle Dark Mode</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            if (body.classList.contains("dark-mode")) {
+                body.classList.remove("dark-mode");
+                body.classList.add("light-mode");
+                localStorage.setItem("theme", "light");
+            } else {
+                body.classList.remove("light-mode");
+                body.classList.add("dark-mode");
+                localStorage.setItem("theme", "dark");
+            }
+        }
+        
+        // Load previous mode on page load
+        window.onload = () => {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme) {
+                document.body.classList.add(savedTheme + "-mode");
+            } else {
+                document.body.classList.add("light-mode");
+            }
+        }
+        </script>
+        
+</body>
+</html>
