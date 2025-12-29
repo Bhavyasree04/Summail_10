@@ -1,0 +1,100 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #c0fdfb, #a8edea);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 15px 0;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.header {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00796b;
+    font-weight: bold;
+}
+
+.button {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #004d40;
+}
+
+.email-box {
+    border-left: 5px solid #00bcd4;
+    padding: 15px;
+    margin-bottom: 12px;
+    background: #f9fafa;
+    border-radius: 10px;
+}
+
+.email-box h4 {
+    margin: 0;
+    color: #006064;
+}
+
+.email-box p {
+    font-size: 14px;
+    color: #555;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.icon {
+    font-size: 20px;
+    margin-right: 5px;
+}
+body.light-mode {
+    background: linear-gradient(to right, #c8f4c4, #b6eaff); /* light green + sky blue */
+    color: #222;
+  }
+  
+  body.dark-mode {
+    background: #1c1c1c;
+    color: #f5f5f5;
+  }
+  
+  .btn-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 8px;
+    background-color: #ffffffaa;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+  }
