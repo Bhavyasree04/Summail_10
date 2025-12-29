@@ -48,7 +48,3 @@ and integration with other email platforms like Outlook.
 License: 
 This project is created for educational and academic purposes only and is not intended for 
 commercial use. 
-Developed By: 
-Kothapalli Sowmya(23251A05M0) 
-Bandapalli Bhavya Sree(23251A05P1) 
-Cheguri Khethana(24255A0526)
