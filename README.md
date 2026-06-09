@@ -53,7 +53,7 @@ Summail is a web-based AI application designed to simplify email management. It 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Bhavyasree04/Summail.git
+git clone https://github.com/Bhavyasree04/Summail_10.git
 cd Summail
 ```
 
