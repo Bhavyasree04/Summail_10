@@ -1,50 +1,205 @@
-Summail – AI-Powered Email Summarizer and Priority Sorter 
-Project Overview: 
-Summail is a web-based AI application designed to simplify the management of emails. 
-It connects securely to a user’s Gmail account using the Gmail API, fetches recent 
-emails, and uses Natural Language Processing techniques to summarize them concisely. 
-It also classifies these emails based on their importance into high, medium, and low 
-priority categories. This allows users to quickly understand the content of their emails 
-and focus on the most important ones. 
-Key Features: 
-The project offers several features including secure Gmail login via OAuth 2.0, AI
-powered email summarization using transformer models, intelligent email priority 
-sorting, a user-friendly interface built with Flask, and automated processing of emails. 
-Technology Stack: 
-The backend is developed in Python using the Flask framework. The frontend is built 
-with HTML, CSS, and JavaScript. Key APIs and libraries used include the Gmail API for 
-fetching emails and Hugging Face Transformers for summarization. 
-System Requirements: 
-To run the project, you need Python 3.7 or above, a Gmail account, an internet 
-connection, and a configured Google Cloud project with the Gmail API enabled. 
-Installation and Setup: 
-First, clone the project repository. Then, optionally create and activate a virtual 
-environment. Next, install all required Python packages using pip. After that, set up 
-Gmail API credentials by creating a project in Google Cloud Console, enabling the Gmail 
-API, configuring the OAuth consent screen, creating OAuth 2.0 credentials, and 
-downloading the credentials.json file. Place this file in the project directory. Finally, run 
-the Flask application and open it in a browser at http://localhost:5000. 
-How It Works: 
-After the user logs in with Gmail, the application fetches emails using the Gmail API. 
-Each email is summarized using an NLP model from Hugging Face. Then, the system 
-classifies each email into a priority category based on its content and subject. The 
-summarized and sorted emails are displayed in a clean web interface. 
-Project Structure: 
-The main folders include templates for HTML files, static for CSS and JavaScript, and 
-Python files such as app.py and summarizer.py. The credentials.json file is used for 
-Gmail API authentication and requirements.txt contains the list of dependencies. 
-Usage Tips: 
-Ensure that the credentials.json file is placed correctly and contains valid keys. The 
-application may take a few seconds to load summaries depending on internet speed. Use 
-a modern browser for the best experience. 
-Common Issues and Solutions: 
-OAuth errors like redirect URI mismatch should be resolved by checking the Google 
-Cloud configuration. If summaries are not generated, check internet connectivity and 
-model availability. Make sure Flask and other dependencies are installed correctly. 
-Future Enhancements: 
-Planned improvements include support for multiple accounts, customizable summaries, 
-local storage of summaries, email reply and scheduling features, mobile responsiveness, 
-and integration with other email platforms like Outlook. 
-License: 
-This project is created for educational and academic purposes only and is not intended for 
-commercial use. 
+# Summail – AI-Powered Email Summarizer and Priority Sorter
+
+## Project Overview
+
+Summail is a web-based AI application designed to simplify email management. It securely connects to a user's Gmail account using the Gmail API, fetches recent emails, and uses Natural Language Processing (NLP) techniques to generate concise summaries. The system also classifies emails into High, Medium, and Low priority categories, enabling users to quickly identify and focus on the most important messages.
+
+---
+
+## Key Features
+
+* Secure Gmail authentication using OAuth 2.0
+* AI-powered email summarization
+* Intelligent email priority classification
+* Automated email processing
+* User-friendly web interface
+* Real-time email retrieval and analysis
+
+---
+
+## Technology Stack
+
+### Backend
+
+* Python
+* Flask
+
+### Frontend
+
+* HTML
+* CSS
+* JavaScript
+
+### APIs and Libraries
+
+* Gmail API
+* Hugging Face Transformers
+* NLTK
+* Google Authentication Libraries
+
+---
+
+## System Requirements
+
+* Python 3.7 or above
+* Gmail account
+* Internet connection
+* Google Cloud Project with Gmail API enabled
+
+---
+
+## Installation and Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/<your-username>/Summail.git
+cd Summail
+```
+
+### 2. Create a Virtual Environment (Optional)
+
+```bash
+python -m venv venv
+```
+
+Activate the virtual environment:
+
+**Windows**
+
+```bash
+venv\Scripts\activate
+```
+
+**Linux/Mac**
+
+```bash
+source venv/bin/activate
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure Gmail API
+
+1. Open Google Cloud Console
+2. Create a new project
+3. Enable Gmail API
+4. Configure the OAuth Consent Screen
+5. Create OAuth 2.0 Credentials
+6. Download the `credentials.json` file
+7. Place `credentials.json` in the project root directory
+
+### 5. Run the Application
+
+```bash
+python app.py
+```
+
+Open the application in your browser:
+
+```text
+http://localhost:5000
+```
+
+---
+
+## How It Works
+
+1. The user signs in securely using Gmail OAuth.
+2. The Gmail API retrieves recent emails.
+3. Email content is processed using Hugging Face Transformer models.
+4. AI generates concise summaries of the emails.
+5. Emails are categorized into High, Medium, or Low priority.
+6. The summarized and prioritized emails are displayed through a clean web interface.
+
+---
+
+## Project Structure
+
+```text
+Summail/
+│
+├── templates/
+│   ├── inbox.html
+│   ├── summary.html
+│   ├── welcome.html
+│   └── email_detail.html
+│
+├── static/
+├── uploads/
+├── data/
+├── models/
+│
+├── app.py
+├── gmail_auth.py
+├── summarizer.py
+├── credentials.json
+├── requirements.txt
+├── Procfile
+└── token.pickle
+```
+
+---
+
+## Usage Tips
+
+* Ensure that the `credentials.json` file is placed correctly.
+* Verify that Gmail API is enabled in Google Cloud Console.
+* The summarization process may take a few seconds depending on internet speed and model loading time.
+* Use a modern browser for the best experience.
+
+---
+
+## Common Issues and Solutions
+
+### OAuth Error: Redirect URI Mismatch
+
+Verify the authorized redirect URIs configured in Google Cloud Console.
+
+### Email Summaries Not Generated
+
+* Check internet connectivity
+* Verify model availability
+* Ensure all required packages are installed
+
+### Authentication Issues
+
+Delete the existing token file and authenticate again.
+
+---
+
+## Future Enhancements
+
+* Support for multiple email accounts
+* Customizable summary lengths
+* Email scheduling and reply assistance
+* Mobile-responsive interface
+* Integration with Outlook and other email platforms
+* Advanced AI-based categorization and recommendations
+
+---
+
+## Applications
+
+* Email productivity management
+* Corporate communication analysis
+* Student and professional email organization
+* Intelligent inbox management
+* AI-assisted information extraction
+
+---
+
+## License
+
+This project is developed for educational and academic purposes only and is not intended for commercial use.
+
+---
+
+## Authors
+
+Bhavya Sree and Team
+
